@@ -1,0 +1,22 @@
+<Prefab>
+  <Window>
+    <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="@CompassWidth" SuggestedHeight="@CompassHeight" ClipContents="true" DoNotAcceptEvents="true" AlphaFactor="@ScaleOpacity">
+      <Children>
+        <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="BlankWhiteSquare" Color="#000000FF" AlphaFactor="@BackgroundOpacity" DoNotAcceptEvents="true" />
+        <Widget DataSource="{Ticks}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" DoNotAcceptEvents="true">
+          <ItemTemplate>
+            <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="80" SuggestedHeight="@Height" HorizontalAlignment="Left" PositionXOffset="@X" DoNotAcceptEvents="true">
+              <Children>
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="4" SuggestedHeight="@TickHeight" HorizontalAlignment="Center" VerticalAlignment="Bottom" Sprite="BlankWhiteSquare" Color="#000000FF" DoNotAcceptEvents="true" />
+                <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="2" SuggestedHeight="@TickHeight" HorizontalAlignment="Center" VerticalAlignment="Bottom" Sprite="BlankWhiteSquare" Color="#FFFFFFFF" DoNotAcceptEvents="true" />
+                <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="@LabelHeight" PositionYOffset="@LabelY" Brush="BannerlordCompass.Tick" Brush.FontSize="@LabelFontSize" Text="@Label" DoNotAcceptEvents="true" />
+              </Children>
+            </Widget>
+          </ItemTemplate>
+        </Widget>
+        <TextWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="@ReadoutHeight" HorizontalAlignment="Center" VerticalAlignment="Top" Brush="BannerlordCompass.Readout" Brush.FontSize="@ReadoutFontSize" Text="@Bearing" DoNotAcceptEvents="true" />
+        <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="24" SuggestedHeight="18" HorizontalAlignment="Center" VerticalAlignment="Top" PositionYOffset="@PointerY" Brush="BannerlordCompass.Pointer" Text="▼" DoNotAcceptEvents="true" />
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

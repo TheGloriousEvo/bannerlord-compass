@@ -1,0 +1,9 @@
+<Prefab>
+  <Window>
+    <Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" DoNotAcceptEvents="true" IsVisible="@IsVisible">
+      <Children>
+        <BannerlordCompassRuler HorizontalAlignment="Center" VerticalAlignment="Bottom" MarginBottom="@BottomOffset" />
+      </Children>
+    </Widget>
+  </Window>
+</Prefab>

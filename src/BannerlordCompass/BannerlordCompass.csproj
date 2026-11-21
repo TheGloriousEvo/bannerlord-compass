@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>7.3</LangVersion>
+    <AssemblyName>BannerlordCompass</AssemblyName>
+    <RootNamespace>BannerlordCompass</RootNamespace>
+    <Version>1.0.1</Version>
+    <GameDir>$(BANNERLORD_GAME_DIR)</GameDir>
+    <ClientBin>$(GameDir)/bin/Win64_Shipping_Client</ClientBin>
+    <NativeBin>$(GameDir)/Modules/Native/bin/Win64_Shipping_Client</NativeBin>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="TaleWorlds.DotNet"><HintPath>$(ClientBin)/TaleWorlds.DotNet.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.Core"><HintPath>$(ClientBin)/TaleWorlds.Core.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.Engine"><HintPath>$(ClientBin)/TaleWorlds.Engine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.Engine.GauntletUI"><HintPath>$(ClientBin)/TaleWorlds.Engine.GauntletUI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.GauntletUI.Data"><HintPath>$(ClientBin)/TaleWorlds.GauntletUI.Data.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.Library"><HintPath>$(ClientBin)/TaleWorlds.Library.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.Localization"><HintPath>$(ClientBin)/TaleWorlds.Localization.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.MountAndBlade"><HintPath>$(ClientBin)/TaleWorlds.MountAndBlade.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.MountAndBlade.ViewModelCollection"><HintPath>$(ClientBin)/TaleWorlds.MountAndBlade.ViewModelCollection.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.ScreenSystem"><HintPath>$(ClientBin)/TaleWorlds.ScreenSystem.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.MountAndBlade.View"><HintPath>$(NativeBin)/TaleWorlds.MountAndBlade.View.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.GauntletUI"><HintPath>$(ClientBin)/TaleWorlds.GauntletUI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.TwoDimension"><HintPath>$(ClientBin)/TaleWorlds.TwoDimension.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Newtonsoft.Json"><HintPath>$(ClientBin)/Newtonsoft.Json.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection"><HintPath>$(GameDir)/Modules/Multiplayer/bin/Win64_Shipping_Client/TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+  <Target Name="ValidateGameReferences" BeforeTargets="ResolveReferences">
+    <Error Condition="'$(GameDir)' == ''" Text="Set BANNERLORD_GAME_DIR to the path of your local Bannerlord installation before building." />
+    <Error Condition="!Exists('$(ClientBin)/TaleWorlds.MountAndBlade.dll')" Text="BANNERLORD_GAME_DIR does not contain the expected Bannerlord client assemblies." />
+    <Error Condition="!Exists('$(NativeBin)/TaleWorlds.MountAndBlade.View.dll')" Text="BANNERLORD_GAME_DIR does not contain Native mission-view assemblies." />
+  </Target>
+</Project>

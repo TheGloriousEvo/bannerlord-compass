@@ -1,0 +1,17 @@
+<Brushes>
+  <Brush Name="BannerlordCompass.Readout" FontSize="26" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Center" TextVerticalAlignment="Center">
+    <Styles>
+      <Style Name="Default" FontColor="#FFFFFFFF" TextOutlineColor="#000000FF" TextOutlineAmount="0.4" TextSoftBorder="0" TextGlowColor="#000000FF" TextGlowRadius="0.1" />
+    </Styles>
+  </Brush>
+  <Brush Name="BannerlordCompass.Tick" FontSize="18" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Center" TextVerticalAlignment="Center">
+    <Styles>
+      <Style Name="Default" FontColor="#FFFFFFFF" TextOutlineColor="#000000FF" TextOutlineAmount="0.4" TextSoftBorder="0" />
+    </Styles>
+  </Brush>
+  <Brush Name="BannerlordCompass.Pointer" FontSize="16" Font="FiraSansExtraCondensed-Regular" TextHorizontalAlignment="Center" TextVerticalAlignment="Center">
+    <Styles>
+      <Style Name="Default" FontColor="#FFFFFFFF" TextOutlineColor="#000000FF" TextOutlineAmount="0.4" TextSoftBorder="0" />
+    </Styles>
+  </Brush>
+</Brushes>

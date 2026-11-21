@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+  <Name value="Bannerlord Compass" />
+  <Id value="BannerlordCompass" />
+  <Version value="v1.0.1" />
+  <ModuleCategory value="MultiplayerOptional" />
+  <ModuleType value="Community" />
+  <DependedModules>
+    <DependedModule Id="Native" Optional="false" />
+    <DependedModule Id="Multiplayer" Optional="false" />
+  </DependedModules>
+  <SubModules>
+    <SubModule>
+      <Name value="Bannerlord Compass" />
+      <DLLName value="BannerlordCompass.dll" />
+      <SubModuleClassType value="BannerlordCompass.CompassSubModule" />
+      <Tags>
+        <Tag key="DedicatedServerType" value="none" />
+        <Tag key="IsNoRenderModeElement" value="false" />
+      </Tags>
+    </SubModule>
+  </SubModules>
+</Module>
